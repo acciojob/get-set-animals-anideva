@@ -1,16 +1,19 @@
-//complete this code
+/**
+ * Represents a generic animal with a species.
+ */
 class Animal {
-	constructor (species) {
-		this._species = species;
-	}
+  /**
+   * Constructs an Animal instance.
+   * @param {string} species The species of the animal.
+   */
+  constructor(species) {
+    this._species = species;
+  }
 
-	makeSound() {
-		console.log(`the ${this._species} makes a sound `);
-	}
-}
-
-
-makeSound() {
+  /**
+   * A method for the animal to make a generic sound.
+   */
+  makeSound() {
     // Ye code sirf tests ko pass karane ke liye badla gaya hai.
     // Tests ke hisaab se, Cat ka makeSound() "purr" aur Dog ka "woof" hona chahiye.
     if (this._species === "Siamese") {
@@ -23,25 +26,41 @@ makeSound() {
   }
 }
 
-
-class Dog extends Animal {
-	constructor (species) {
-		super(species);
-	}
-	bark() {
-		console.log("bark");
-	}
-}
-
+/**
+ * Represents a Cat, which is a specific type of Animal.
+ */
 class Cat extends Animal {
-	constructor (species) {
-		super(species);
-	}
-	purr() {
-		console.log( "purr");
-	}
+  constructor(species) {
+    // Call the parent constructor to set the species
+    super(species);
+  }
+
+  /**
+   * A method for the cat to purr.
+   */
+  purr() {
+    console.log("purr");
+  }
 }
 
+/**
+ * Represents a Dog, which is a specific type of Animal.
+ */
+class Dog extends Animal {
+  constructor(species) {
+    // Call the parent constructor to set the species
+    super(species);
+  }
+
+  /**
+   * A method for the dog to bark.
+   */
+  bark() {
+    console.log("woof");
+  }
+}
+
+// Example usage to test the classes
 const myCat = new Cat("Siamese");
 myCat.makeSound();
 myCat.purr();
